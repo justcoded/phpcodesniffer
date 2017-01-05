@@ -5,6 +5,7 @@
  <!-- Include the whole PSR-2 standard -->
  <rule ref="PSR2">
     <exclude name="Generic.WhiteSpace.DisallowTabIndent"/>
+    <exclude name="Generic.ControlStructures.InlineControlStructure"/>
  </rule>
 
     <!-- Covers rule: Your indentation should always reflect logical structure. -->
