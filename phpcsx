@@ -1,0 +1,18 @@
+#!/usr/bin/env php
+<?php
+
+$GLOBALS['PHP_CODESNIFFER_CONFIG_DATA'] = array (
+	'installed_paths' => implode(',', array(
+		dirname(__FILE__) . '/wpcs/',
+		dirname(__FILE__) . '/justcoded/',
+	)),
+);
+
+$cs = dirname(__FILE__).'/phpcs/CodeSniffer/CLI.php';
+
+if (is_file($cs) === true) {
+    include_once $cs;
+
+	$cli = new PHP_CodeSniffer_CLI();
+	$cli->runphpcs();
+}
