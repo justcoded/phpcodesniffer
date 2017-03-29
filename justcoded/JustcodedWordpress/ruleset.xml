@@ -6,10 +6,8 @@
 	<exclude-pattern>*/vendor/*</exclude-pattern>
 
 	<rule ref="WordPress-Core">
-		<exclude name="WordPress.WP.I18n.NonSingularStringLiteralDomain"/>
-		<exclude name="WordPress.WP.I18n.MissingTranslatorsComment"/>
-		<exclude name="WordPress.WP.I18n.MismatchedPlaceholders"/>
-		<exclude name="WordPress.WP.I18n.MissingSingularPlaceholders"/>
+		<exclude name="Squiz.PHP.DisallowMultipleAssignments"/>
+		<exclude name="WordPress.WP.I18n"/>
 
 		<!-- These sniffs are replaced with our own versions -->
 		<exclude name="Generic.Files.LowercasedFilename"/>
@@ -48,5 +46,4 @@
 		<exclude name="Squiz.Commenting.FileComment"/>
 	</rule>
 	<rule ref="WordPress-Extra"/>
-	<rule ref="WordPress-VIP"/>
 </ruleset>
