@@ -33,7 +33,7 @@ class JustcodedWordpress_Sniffs_NamingConventions_ValidVariableNameSniff extends
 	 *
 	 * @var string[]
 	 */
-	public $customVariablesWhitelist = array(
+	public $customPropertiesWhitelist = array(
 		'SLUG',
 		'TITLE',
 	);
