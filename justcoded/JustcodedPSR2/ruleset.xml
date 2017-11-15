@@ -19,5 +19,12 @@
     <!-- Covers rule: Use real tabs and not spaces. -->
     <arg name="tab-width" value="4"/>
     <rule ref="Generic.WhiteSpace.DisallowSpaceIndent"/>
-    
+
+    <rule ref="WordPress-Docs">
+        <exclude name="Squiz.Commenting.FileComment"/>
+        <exclude name="Squiz.Commenting.FunctionComment.ParamCommentFullStop"/>
+        <exclude name="Squiz.Commenting.FunctionComment.SpacingAfterParamType"/>
+        <exclude name="Generic.Commenting.DocComment"/>
+    </rule>
+    <rule ref="JustcodedPSR2.Commenting.DocComment" />
 </ruleset>

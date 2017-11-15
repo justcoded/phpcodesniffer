@@ -22,9 +22,14 @@
     "php": ">=5.4.0",
     "ext-tokenizer": "*",
     "ext-xmlwriter": "*",
-    "ext-simplexml": "*"
+    "ext-simplexml": "*",
+    "wp-coding-standards/wpcs": "~0.14.0"
+  },
+  "scripts": {
+    "post-install-cmd": "phpcsx-init",
+    "post-update-cmd": "phpcsx-init"
   },
   "bin": [
-    "phpcsx"
+    "bin/phpcsx-init"
   ]
 }

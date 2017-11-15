@@ -1,18 +1,27 @@
 #!/usr/bin/env php
 <?php
 
-$GLOBALS['PHP_CODESNIFFER_CONFIG_DATA'] = array (
-	'installed_paths' => implode(',', array(
-		dirname(__FILE__) . '/wpcs/',
-		dirname(__FILE__) . '/justcoded/',
-	)),
-);
+$root = dirname(__FILE__);
 
-$cs = dirname(__FILE__).'/phpcs/CodeSniffer/CLI.php';
+require_once $root . '/vendor/squizlabs/php_codesniffer/autoload.php';
+/*
+$argv = [ $_SERVER['argv'][0] ];
+$argv[] = '--config-set';
+$argv[] = 'installed_paths';
+$argv[] = implode(',', array(
+    $root . '/vendor/wp-coding-standards/wpcs/',
+    $root . '/justcoded/',
+));
 
-if (is_file($cs) === true) {
-    include_once $cs;
-
-	$cli = new PHP_CodeSniffer_CLI();
-	$cli->runphpcs();
-}
+// patch command options to add new paths
+$_SERVER['argc'] += 3;
+$_SERVER['argv'][] = '--config-set';
+$_SERVER['argv'][] = 'installed_paths';
+$_SERVER['argv'][] = implode(',', array(
+    $root . '/vendor/wp-coding-standards/wpcs/',
+    $root . '/justcoded/',
+));
+*/
+$runner   = new PHP_CodeSniffer\Runner();
+$exitCode = $runner->runPHPCS();
+exit($exitCode);

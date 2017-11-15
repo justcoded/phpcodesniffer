@@ -7,10 +7,6 @@
  * @license https://opensource.org/licenses/MIT MIT
  */
 
-if ( ! class_exists( 'WordPress_Sniffs_NamingConventions_ValidVariableNameSniff', true ) ) {
-	throw new PHP_CodeSniffer_Exception( 'Class WordPress_Sniffs_NamingConventions_ValidVariableNameSniff not found' );
-}
-
 /**
  * Checks the naming of variables and member variables.
  *
@@ -23,19 +19,27 @@ if ( ! class_exists( 'WordPress_Sniffs_NamingConventions_ValidVariableNameSniff'
  * Last synced with base class July 2014 at commit ed257ca0e56ad86cd2a4d6fa38ce0b95141c824f.
  * @link    https://github.com/squizlabs/PHP_CodeSniffer/blob/master/CodeSniffer/Standards/Squiz/Sniffs/NamingConventions/ValidVariableNameSniff.php
  */
-class JustcodedWordpress_Sniffs_NamingConventions_ValidVariableNameSniff extends WordPress_Sniffs_NamingConventions_ValidVariableNameSniff
+class JustcodedWordpress_Sniffs_NamingConventions_ValidVariableNameSniff extends \WordPress\Sniffs\NamingConventions\ValidVariableNameSniff
 {
 
-	/**
-	 * Custom list of variables which can have mixed case.
-	 *
-	 * @since 0.10.0
-	 *
-	 * @var string[]
-	 */
-	public $customPropertiesWhitelist = array(
-		'SLUG',
-		'TITLE',
-	);
+    /**
+     * List of member variables that can have mixed case.
+     *
+     * @since 0.9.0
+     * @since 0.11.0 Changed from public to protected.
+     *
+     * @var array
+     */
+    protected $whitelisted_mixed_case_member_var_names = array(
+        'ID'                => true,
+        'comment_ID'        => true,
+        'comment_post_ID'   => true,
+        'post_ID'           => true,
+        'comment_author_IP' => true,
+        'cat_ID'            => true,
+
+        'SLUG'              => true,
+        'TITLE'             => true,
+    );
 
 }

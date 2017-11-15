@@ -3,16 +3,12 @@
  * WordPress Coding Standard, Justcoded edition.
  */
 
-if ( ! class_exists( 'WordPress_Sniffs_XSS_EscapeOutputSniff', true ) ) {
-	throw new PHP_CodeSniffer_Exception( 'Class WordPress_Sniffs_XSS_EscapeOutputSniff not found' );
-}
-
 /**
  * Verifies that all outputted strings are escaped.
  *
  * @link    http://codex.wordpress.org/Data_Validation Data Validation on WordPress Codex
  */
-class JustcodedWordpress_Sniffs_XSS_EscapeOutputSniff extends WordPress_Sniffs_XSS_EscapeOutputSniff {
+class JustcodedWordpress_Sniffs_XSS_EscapeOutputSniff extends \WordPress\Sniffs\XSS\EscapeOutputSniff {
 
 	/**
 	 * Custom list of functions which escape values for output.

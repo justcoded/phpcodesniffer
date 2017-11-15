@@ -1,0 +1,22 @@
+#!/usr/bin/env php
+<?php
+
+$root = dirname(__FILE__) . '/..';
+
+require_once $root . '/vendor/squizlabs/php_codesniffer/autoload.php';
+
+$argv = [
+    $_SERVER['argv'][0],
+    '--config-set',
+    'installed_paths',
+    implode(',', array(
+        $root . '/vendor/wp-coding-standards/wpcs/',
+        $root . '/justcoded/',
+    )),
+];
+$_SERVER['argv'] = $argv;
+$_SERVER['argc'] = count($argv);
+
+$runner   = new PHP_CodeSniffer\Runner();
+$exitCode = $runner->runPHPCS();
+exit($exitCode);
