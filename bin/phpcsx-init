@@ -1,17 +1,23 @@
 #!/usr/bin/env php
 <?php
 
-$root = dirname(__FILE__) . '/..';
+$package = dirname(__FILE__);
 
-require_once $root . '/vendor/squizlabs/php_codesniffer/autoload.php';
+if ( false !== strpos($package, '/justcoded/phpcodesniffer/') ) {
+	$vendors = substr($package, 0, strpos($package, '/justcoded/phpcodesniffer/'));
+} else {
+	$vendors = $package;
+}
+
+require_once $vendors . '/squizlabs/php_codesniffer/autoload.php';
 
 $argv = [
     $_SERVER['argv'][0],
     '--config-set',
     'installed_paths',
     implode(',', array(
-        $root . '/vendor/wp-coding-standards/wpcs/',
-        $root . '/justcoded/',
+	    $vendors . '/wp-coding-standards/wpcs/',
+	    $package . '/justcoded/',
     )),
 ];
 $_SERVER['argv'] = $argv;
