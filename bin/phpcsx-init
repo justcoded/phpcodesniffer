@@ -1,11 +1,16 @@
 #!/usr/bin/env php
 <?php
 
-$package = dirname(__FILE__);
+$package = dirname(dirname(__FILE__));
 
-if ( false !== strpos($package, '/justcoded/phpcodesniffer/') ) {
-	$vendors = substr($package, 0, strpos($package, '/justcoded/phpcodesniffer/'));
+if ( false !== strpos($package, '/extensions/phpcodesniffer') ) {
+	// dev mode
+	$vendors = substr($package, 0, strpos($package, '/extensions/phpcodesniffer')) . '/vendor';
+} elseif ( false !== strpos($package, '/justcoded/phpcodesniffer') ) {
+	// dependency mode
+	$vendors = substr($package, 0, strpos($package, '/justcoded/phpcodesniffer'));
 } else {
+	// standalone package mode
 	$vendors = $package;
 }
 
@@ -25,4 +30,4 @@ $_SERVER['argc'] = count($argv);
 
 $runner   = new PHP_CodeSniffer\Runner();
 $exitCode = $runner->runPHPCS();
-exit($exitCode);
+exit();

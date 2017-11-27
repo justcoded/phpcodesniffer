@@ -27,7 +27,9 @@
   },
   "scripts": {
     "post-install-cmd": "phpcsx-init",
-    "post-update-cmd": "phpcsx-init"
+    "post-update-cmd": "phpcsx-init",
+    "post-package-install": "phpcsx-init",
+    "post-package-update": "phpcsx-init"
   },
   "bin": [
     "bin/phpcsx-init"
