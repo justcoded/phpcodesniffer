@@ -11,7 +11,7 @@ if ( false !== strpos($package, '/extensions/phpcodesniffer') ) {
 	$vendors = substr($package, 0, strpos($package, '/justcoded/phpcodesniffer'));
 } else {
 	// standalone package mode
-	$vendors = $package;
+	$vendors = $package . '/vendor';
 }
 
 require_once $vendors . '/squizlabs/php_codesniffer/autoload.php';
