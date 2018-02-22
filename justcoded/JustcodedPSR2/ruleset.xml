@@ -6,6 +6,7 @@
      <rule ref="PSR2">
         <exclude name="Generic.WhiteSpace.DisallowTabIndent"/>
         <exclude name="Generic.ControlStructures.InlineControlStructure"/>
+        <exclude name="Generic.PHP.DisallowShortOpenTag.EchoFound"/>
      </rule>
 
     <!-- Covers rule: Your indentation should always reflect logical structure. -->
