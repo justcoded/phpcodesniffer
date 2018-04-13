@@ -26,6 +26,7 @@
         <exclude name="Squiz.Commenting.FunctionComment.ParamCommentFullStop"/>
         <exclude name="Squiz.Commenting.FunctionComment.SpacingAfterParamType"/>
         <exclude name="Generic.Commenting.DocComment"/>
+        <exclude name="Squiz.Commenting.FunctionComment.MissingParamComment"/>
     </rule>
     <rule ref="JustcodedPSR2.Commenting.DocComment" />
 </ruleset>
