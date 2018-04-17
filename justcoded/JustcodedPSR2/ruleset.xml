@@ -28,6 +28,8 @@
         <exclude name="Generic.Commenting.DocComment"/>
         <exclude name="Squiz.Commenting.FunctionComment.MissingParamComment"/>
         <exclude name="Squiz.PHP.CommentedOutCode.Found"/>
+        <exclude name="Squiz.Commenting.FunctionComment.EmptyThrows"/>
+        <exclude name="PSR2.Namespaces.UseDeclaration.MultipleDeclarations"/>
     </rule>
     <rule ref="JustcodedPSR2.Commenting.DocComment"/>
 </ruleset>
