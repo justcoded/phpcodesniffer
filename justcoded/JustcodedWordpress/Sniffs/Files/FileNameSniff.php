@@ -42,7 +42,7 @@ class JustcodedWordpress_Sniffs_Files_FileNameSniff implements PHP_CodeSniffer_S
 	{
 		$fileName = basename($phpcsFile->getFileName());
 
-		if (0 < strpos($fileName, '_')) {
+		if (0 < strpos($fileName, '_') && strcmp($fileName{0}, ucfirst($fileName{0})) !== 0) {
 			$expected = str_replace('_', '-', $fileName);
 			if (0 == strpos($fileName, '_')) {
 				$expected = '_' . substr($expected, 1);

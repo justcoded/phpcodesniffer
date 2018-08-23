@@ -1,49 +1,55 @@
 <?xml version="1.0"?>
 <ruleset name="JustcodedWordpress">
-	<description>WordPress Coding Standards, JustCoded edition</description>
+    <description>WordPress Coding Standards, JustCoded edition</description>
 
-	<exclude-pattern>*/cms/*</exclude-pattern>
-	<exclude-pattern>*/vendor/*</exclude-pattern>
+    <exclude-pattern>*/cms/*</exclude-pattern>
+    <exclude-pattern>*/vendor/*</exclude-pattern>
 
-	<rule ref="WordPress-Core">
-		<exclude name="Squiz.PHP.DisallowMultipleAssignments"/>
-		<exclude name="WordPress.WP.I18n"/>
+    <rule ref="WordPress-Core">
+        <exclude name="Squiz.PHP.DisallowMultipleAssignments"/>
+        <exclude name="WordPress.WP.I18n"/>
 
-		<!-- These sniffs are replaced with our own versions -->
-		<exclude name="Generic.Files.LowercasedFilename"/>
-		<exclude name="WordPress.NamingConventions.ValidVariableName"/>
-		<exclude name="WordPress.Files.FileName"/>
-		<exclude name="WordPress.XSS.EscapeOutput"/>
-	</rule>
+        <!-- These sniffs are replaced with our own versions -->
+        <exclude name="Generic.Files.LowercasedFilename"/>
+        <exclude name="WordPress.NamingConventions.ValidVariableName"/>
+        <exclude name="WordPress.Files.FileName"/>
+        <exclude name="WordPress.XSS.EscapeOutput"/>
+        <exclude name="Squiz.PHP.CommentedOutCode"/>
+    </rule>
 
-	<!--
-		According wo WPCS all filenames should be lowercased.
-		However we use PSR-4 autoload standard, which requires CamelCase file names for classes.
-		So we ignore this rule if file contains a namespace and same class name as file name.
-	-->
-	<rule ref="JustcodedWordpress.Files.LowercasedFilename" />
+    <!--
+        According wo WPCS all filenames should be lowercased.
+        However we use PSR-4 autoload standard, which requires CamelCase file names for classes.
+        So we ignore this rule if file contains a namespace and same class name as file name.
+    -->
+    <rule ref="JustcodedWordpress.Files.LowercasedFilename"/>
 
-	<!--
-		WPCS disallow underscores inside filenames.
-		We allow underscores at the beginning of the filename. This indicates that this file is a partial.
-	-->
-	<rule ref="JustcodedWordpress.Files.FileName" />
+    <!--
+        WPCS disallow underscores inside filenames.
+        We allow underscores at the beginning of the filename. This indicates that this file is a partial.
+    -->
+    <rule ref="JustcodedWordpress.Files.FileName"/>
 
-	<!--
-		Allow WPCS to ignore $SLUG and $TITLE class properties.
-		(WP does not follow variable name for $ID fields as well)
-	-->
-	<rule ref="JustcodedWordpress.NamingConventions.ValidVariableName" />
+    <!--
+        Allow WPCS to ignore $SLUG and $TITLE class properties.
+        (WP does not follow variable name for $ID fields as well)
+    -->
+    <rule ref="JustcodedWordpress.NamingConventions.ValidVariableName"/>
 
-	<!--
-		Allows printing of unescaped content inside layout files. Only this line is allowed:
-			<?php echo $content; ?>
-	-->
-	<rule ref="JustcodedWordpress.XSS.EscapeOutput" />
+    <!--
+        Allows printing of unescaped content inside layout files. Only this line is allowed:
+            <?php echo $content; ?>
+    -->
+    <rule ref="JustcodedWordpress.XSS.EscapeOutput"/>
 
+    <!--
+        Prevent constructions like @var type $var to be marked as code. 
+    -->
+    <rule ref="JustcodedWordpress.PHP.CommentedOutCode"/>
 
-	<rule ref="WordPress-Docs">
-		<exclude name="Squiz.Commenting.FileComment"/>
-	</rule>
-	<rule ref="WordPress-Extra"/>
+    <rule ref="WordPress-Docs">
+        <exclude name="Squiz.Commenting.FileComment"/>
+        <exclude name="Squiz.Commenting.FunctionComment.EmptyThrows"/>
+    </rule>
+    <rule ref="WordPress-Extra"/>
 </ruleset>
