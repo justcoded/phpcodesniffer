@@ -43,7 +43,8 @@ By default PHPCS has a command line interface to run the same checks. For exampl
 ### Code style import
 
 PHPStorm has it's own built-in WordPress and PSR-2 code styles presets, however they follow only must rules and it some cases are not accurate.
-We updated code styles to work with current repository rulesets. You can find code styles inside `phpstorm` directory in this repository.
+We updated code styles to work with current WordPress repository rulesets and modern framework code styles. 
+You can find code styles inside `phpstorm` directory in this repository.
 
 To import a code style:
 
@@ -51,7 +52,7 @@ To import a code style:
 - Navigate Editor > Code Style 
 - Click on wheel icon near a "Scheme" and choose "Import scheme"
 - Select xml file to import
-- Select new "Wordpress theme"
+- Select new "Wordpress" or "PSR2 tabs" scheme
 
 ### Code templates configuration
 
