@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<ruleset name="JustcodedStdPSR2">
+    <description>The PSR-2 coding standard with Spaces indentation.</description>
+
+    <!-- Include the whole PSR-2 standard -->
+    <rule ref="JustcodedPSR2">
+        <exclude name="Generic.WhiteSpace.DisallowSpaceIndent"/>
+    </rule>
+
+    <!-- Covers rule: Your indentation should always reflect logical structure. -->
+    <rule name="Generic.WhiteSpace.DisallowTabIndent"/>
+    <rule ref="Generic.WhiteSpace.ScopeIndent">
+        <properties>
+            <property name="indent" value="4"/>
+            <property name="tabIndent" value="false"/>
+        </properties>
+    </rule>
+</ruleset>
